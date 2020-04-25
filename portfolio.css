@@ -1,0 +1,164 @@
+* {
+	text-decoration: none;
+	list-style: none;
+	align-items: center;
+}
+
+body {
+	background-color: whitesmoke;
+	margin: 0;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.nav {
+	display: flex;
+	flex: 0 0 25%;
+	background-color: #80351E;
+	width: 100%;
+	overflow: hidden;
+	font-weight: bold;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #80351E;
+}
+
+li {
+	float: left;
+	width: 24%;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: #111;
+}
+
+li a:active {
+	background-color: #063B67;
+	color: white;
+}
+
+li a:hover:not(.active) {
+	background-color: #555;
+	color: white;
+}
+
+p {
+	font-size: 1.2em;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+    text-align: left;
+     max-width: 800px;
+	display: inline-block;
+	float: right;
+}
+
+h1 {
+	text-align: center;
+}
+
+a {
+	color: #01213b;
+	font-family: 'Lato', serif;
+}
+
+a:hover {
+	cursor: pointer;
+}
+
+a.button {
+	background-color: #285828;
+	border: none;
+	color: white;
+	padding: 20px 34px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	width: 40%;
+}
+
+.card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+	padding: 2px 16px;
+}
+
+img.resize {
+	max-width: 50%;
+	max-height: 50%;
+}
+
+.card-block {
+	padding: 2em;
+}
+
+.card-title {
+	margin: 0;
+	color: #01213b;
+	font-size: 1.6em;
+	font-family: 'Quattrocento', serif;
+}
+
+.card-footer {
+	display: flex;
+	text-align: center;
+}
+
+.card-actions {
+	margin-right: 1em;
+}
+
+img {
+	width: 100%;
+	max-width: 800px;
+	padding-bottom: 10px;
+	justify-content: center;
+	float: right;
+}
+
+footer {
+	grid-column: span 3;
+	padding: 30px;
+	text-align: center;
+	font-size: 1.4em;
+	color: black;
+}
+
+@media all and (max-width: 800px) {
+	h1 {
+		font-size: 6vw;
+	}
+	h2,
+	h3 {
+		font-size: 4vw;
+	}
+	p {
+		font-size: 2vw;
+	}
+}
