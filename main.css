@@ -63,7 +63,8 @@
          font-size: 1.2em;
          font-family: 'Lato', sans-serif;
          font-weight: 300;
-         text-align: left max-width: 800px;
+         text-align: left;
+         max-width: 800px;
          display: inline-block;
          float: left;
          text-align: center;
@@ -200,6 +201,47 @@
      .card-actions {
          margin-right: 1em;
      }
+
+     .social-links {
+        background: #1a1a1a;
+        color: #e6e6e6;
+        width: 15rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        border-radius: 1rem;
+        margin: 1rem 0.5rem;	
+    
+    }
+    
+    .social-links {
+        height: 5rem;
+        width: 10rem;
+        margin-bottom: 1rem;
+    }
+    
+    .social {
+        padding: 20px;
+        font-size: 30px;
+        /* width: 50px; */
+        text-align: center;
+        text-decoration: none; 
+        display: block;
+        justify-content: center;
+    }
+    
+    .social img {
+        height: 5rem;
+        width: 5rem;
+        margin-bottom: 3rem;
+    }
+
+    .education {
+        background: #80351E;
+        color: #e6e6e6;
+        padding: 4rem 0;
+    }
      
      img {
          width: 100%;
@@ -220,3 +262,4 @@
          p {
              font-size: 4vw;
          }
+}
