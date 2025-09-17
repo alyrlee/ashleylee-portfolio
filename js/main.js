@@ -11,64 +11,26 @@ document.addEventListener('DOMContentLoaded', function() {
     initSkipNavigation();
     initFocusManagement();
     initPrintStyles();
+    initActiveSectionIndicator();
 });
 
 // Mobile Menu Toggle
 function initMobileMenu() {
-    // Create mobile menu button
-    const nav = document.querySelector('nav[role="navigation"]');
-    if (!nav) return;
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
     
-    const mobileMenuButton = document.createElement('button');
-    mobileMenuButton.setAttribute('aria-label', 'Toggle mobile menu');
-    mobileMenuButton.setAttribute('aria-expanded', 'false');
-    mobileMenuButton.className = 'md:hidden p-2 rounded-lg hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2';
-    mobileMenuButton.innerHTML = `
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-    `;
-    
-    // Create mobile menu container
-    const mobileMenu = document.createElement('div');
-    mobileMenu.className = 'md:hidden absolute top-full left-0 right-0 bg-white border-t border-slate-200 shadow-lg z-40 hidden';
-    mobileMenu.setAttribute('aria-label', 'Mobile navigation menu');
-    
-    // Clone desktop menu for mobile
-    const desktopMenu = nav.querySelector('ul[role="menubar"]');
-    if (desktopMenu) {
-        const mobileMenuList = desktopMenu.cloneNode(true);
-        mobileMenuList.className = 'flex flex-col p-4 space-y-2';
-        mobileMenuList.removeAttribute('role');
-        mobileMenuList.removeAttribute('aria-label');
-        
-        // Update mobile menu links
-        const mobileLinks = mobileMenuList.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.className = 'block px-4 py-2 text-sm hover:bg-slate-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2';
-            link.removeAttribute('role');
-        });
-        
-        mobileMenu.appendChild(mobileMenuList);
-    }
-    
-    // Add resume link to mobile menu
-    const resumeLink = nav.querySelector('a[href*="Resume"]');
-    if (resumeLink) {
-        const mobileResumeLink = resumeLink.cloneNode(true);
-        mobileResumeLink.className = 'block px-4 py-2 text-sm hover:bg-slate-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 mx-4 mb-2 border border-slate-300 text-center';
-        mobileMenu.appendChild(mobileResumeLink);
-    }
-    
-    // Insert mobile menu elements
-    nav.appendChild(mobileMenuButton);
-    nav.appendChild(mobileMenu);
+    if (!mobileMenuButton || !mobileMenu) return;
     
     // Toggle mobile menu
     mobileMenuButton.addEventListener('click', function() {
         const isExpanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', !isExpanded);
-        mobileMenu.classList.toggle('hidden');
+        
+        if (isExpanded) {
+            mobileMenu.style.display = 'none';
+        } else {
+            mobileMenu.style.display = 'block';
+        }
         
         // Update button icon
         const svg = this.querySelector('svg');
@@ -81,9 +43,9 @@ function initMobileMenu() {
     
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(e) {
-        if (!nav.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+        if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target) && mobileMenu.style.display !== 'none') {
             mobileMenuButton.setAttribute('aria-expanded', 'false');
-            mobileMenu.classList.add('hidden');
+            mobileMenu.style.display = 'none';
             const svg = mobileMenuButton.querySelector('svg');
             svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
         }
@@ -91,9 +53,9 @@ function initMobileMenu() {
     
     // Close mobile menu on escape key
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+        if (e.key === 'Escape' && mobileMenu.style.display !== 'none') {
             mobileMenuButton.setAttribute('aria-expanded', 'false');
-            mobileMenu.classList.add('hidden');
+            mobileMenu.style.display = 'none';
             mobileMenuButton.focus();
             const svg = mobileMenuButton.querySelector('svg');
             svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
@@ -271,3 +233,37 @@ const debouncedResize = debounce(() => {
 }, 250);
 
 window.addEventListener('resize', debouncedResize);
+
+// Active Section Indicator
+function initActiveSectionIndicator() {
+    const sections = [...document.querySelectorAll('section[id]')];
+    const navLinks = [...document.querySelectorAll('header nav a[href^="#"]')];
+    
+    if (sections.length === 0 || navLinks.length === 0) return;
+    
+    const map = new Map(navLinks.map(a => [a.getAttribute('href').slice(1), a]));
+    
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Remove active classes from all nav links
+                navLinks.forEach(a => {
+                    a.classList.remove('text-brand-700', 'font-semibold');
+                    a.classList.add('text-slate-700');
+                });
+                
+                // Add active class to current section's nav link
+                const link = map.get(entry.target.id);
+                if (link) {
+                    link.classList.remove('text-slate-700');
+                    link.classList.add('text-brand-700', 'font-semibold');
+                }
+            }
+        });
+    }, { 
+        rootMargin: "-40% 0px -55% 0px", 
+        threshold: 0.01 
+    });
+    
+    sections.forEach(section => io.observe(section));
+}

@@ -55,7 +55,7 @@ git push origin main
 
 Visit:
 ```
-https://alyrlee.github.io/ashleylee-portfolio/portfolio.html
+https://alyrlee.github.io/ashleylee-portfolio
 ```
 
 ## Notes
