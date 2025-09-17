@@ -185,38 +185,90 @@
   </a>
   
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b" role="banner">
-    <nav class="mx-auto max-w-6xl flex items-center justify-between p-4" role="navigation" aria-label="Main navigation">
-      <a href="#main-content" class="font-semibold text-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 rounded" aria-label="Ashley Lee-Vigneau - Go to main content">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/50 shadow-sm" role="banner">
+    <nav class="mx-auto max-w-6xl flex items-center justify-between px-6 py-4" role="navigation" aria-label="Main navigation">
+      <!-- Logo/Brand -->
+      <a href="#main-content" class="font-bold text-xl text-slate-900 hover:text-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 rounded-lg px-2 py-1 transition-colors duration-200" aria-label="Ashley Lee-Vigneau - Go to main content">
         Ashley Lee-Vigneau
       </a>
-      <ul class="hidden md:flex gap-6 text-sm" role="menubar">
-        <li role="none">
-          <a href="#projects" class="hover:text-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 rounded px-2 py-1" role="menuitem" aria-label="View featured projects">
-            Projects
-          </a>
-        </li>
-        <li role="none">
-          <a href="#about" class="hover:text-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 rounded px-2 py-1" role="menuitem" aria-label="Learn about Ashley">
-            About
-          </a>
-        </li>
-        <li role="none">
-          <a href="#contact" class="hover:text-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 rounded px-2 py-1" role="menuitem" aria-label="Contact Ashley">
-            Contact
-          </a>
-        </li>
-      </ul>
-          <a
-            href="/assets/img/Ashley_Lee-Vigneau_Resume-Sept.pdf"
-            class="text-sm border px-3 py-1.5 rounded-lg hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 transition-colors"
-            aria-label="Download Ashley's resume (PDF)"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Resume
-          </a>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <ul class="flex gap-8 text-sm font-medium" role="menubar">
+          <li role="none">
+            <a href="#projects" class="text-slate-700 hover:text-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 rounded-lg px-3 py-2 transition-colors duration-200 relative group" role="menuitem" aria-label="View featured projects">
+              Projects
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-700 transition-all duration-200 group-hover:w-full"></span>
+            </a>
+          </li>
+          <li role="none">
+            <a href="#about" class="text-slate-700 hover:text-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 rounded-lg px-3 py-2 transition-colors duration-200 relative group" role="menuitem" aria-label="Learn about Ashley">
+              About
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-700 transition-all duration-200 group-hover:w-full"></span>
+            </a>
+          </li>
+          <li role="none">
+            <a href="#contact" class="text-slate-700 hover:text-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 rounded-lg px-3 py-2 transition-colors duration-200 relative group" role="menuitem" aria-label="Contact Ashley">
+              Contact
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-700 transition-all duration-200 group-hover:w-full"></span>
+            </a>
+          </li>
+        </ul>
+        
+        <!-- Resume Button -->
+        <a
+          href="/assets/img/Ashley_Lee-Vigneau_Resume-Sept.pdf"
+          class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-brand-700 rounded-lg hover:bg-brand-800 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 transition-all duration-200 shadow-sm hover:shadow-md"
+          aria-label="Download Ashley's resume (PDF)"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+          Resume
+        </a>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <button
+        class="md:hidden p-2 rounded-lg text-slate-700 hover:text-brand-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 transition-colors duration-200"
+        aria-label="Toggle mobile menu"
+        aria-expanded="false"
+        id="mobile-menu-button"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="md:hidden border-t border-slate-200/50 bg-white/95 backdrop-blur-md" id="mobile-menu" style="display: none;">
+      <div class="px-6 py-4 space-y-4">
+        <a href="#projects" class="block text-slate-700 hover:text-brand-700 font-medium py-2 transition-colors duration-200" aria-label="View featured projects">
+          Projects
+        </a>
+        <a href="#about" class="block text-slate-700 hover:text-brand-700 font-medium py-2 transition-colors duration-200" aria-label="Learn about Ashley">
+          About
+        </a>
+        <a href="#contact" class="block text-slate-700 hover:text-brand-700 font-medium py-2 transition-colors duration-200" aria-label="Contact Ashley">
+          Contact
+        </a>
+        <a
+          href="/assets/img/Ashley_Lee-Vigneau_Resume-Sept.pdf"
+          class="inline-flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-white bg-brand-700 rounded-lg hover:bg-brand-800 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 transition-all duration-200"
+          aria-label="Download Ashley's resume (PDF)"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+          Resume
+        </a>
+      </div>
+    </div>
   </header>
 
   <!-- Main Content -->
