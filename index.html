@@ -63,6 +63,41 @@
     }
   </script>
   
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ashley Lee-Vigneau",
+    "jobTitle": "Product Manager",
+    "description": "Experienced Product Manager specializing in healthcare, data platforms, and Azure DevOps. Certified CSPO/CSM & SAFe PO/PM.",
+    "url": "https://alyrlee.github.io/ashleylee-portfolio",
+    "image": "https://alyrlee.github.io/ashleylee-portfolio/assets/img/headshot.jpg",
+    "email": "ashleyloreal.lee@gmail.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/ashleylee-vigneau",
+      "https://github.com/alyrlee"
+    ],
+    "knowsAbout": [
+      "Healthcare Technology",
+      "Data Platforms",
+      "Azure DevOps",
+      "Product Management",
+      "Snowflake",
+      "Databricks",
+      "LaunchDarkly"
+    ],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Product Manager",
+      "occupationLocation": {
+        "@type": "Place",
+        "name": "United States"
+      }
+    }
+  }
+  </script>
+  
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/styles.css" />
   <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet" />
@@ -274,7 +309,7 @@
   <!-- Main Content -->
   <main id="main-content" role="main">
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center" aria-labelledby="hero-heading">
+    <section class="relative min-h-screen flex items-center py-10 md:py-12 lg:py-16" aria-labelledby="hero-heading">
       <!-- Background Image with Overlay -->
       <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/img/hero-bg.jpg');" aria-hidden="true">
         <div class="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-slate-800/60 to-brand-700/80"></div>
@@ -294,14 +329,14 @@
             <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
               <a 
                 href="#projects" 
-                class="rounded-xl px-6 py-3 sm:px-8 sm:py-4 bg-brand-700 text-white font-medium hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-300 focus:ring-offset-2 focus:ring-offset-slate-900 transition-colors"
+                class="inline-flex items-center justify-center min-h-[44px] px-6 py-3 sm:px-8 sm:py-4 bg-brand-700 text-white font-medium rounded-xl hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-300 focus:ring-offset-2 focus:ring-offset-slate-900 transition-all duration-200 shadow-sm hover:shadow-md"
                 aria-label="View featured projects section"
               >
                 See Projects
               </a>
               <a 
                 href="#contact" 
-                class="rounded-xl px-6 py-3 sm:px-8 sm:py-4 border-2 border-white text-white font-medium hover:bg-white hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900 transition-colors"
+                class="inline-flex items-center justify-center min-h-[44px] px-6 py-3 sm:px-8 sm:py-4 border-2 border-white text-white font-medium rounded-xl hover:bg-white hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900 transition-all duration-200"
                 aria-label="Go to contact section"
               >
                 Get in touch
@@ -324,13 +359,13 @@
     </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="bg-slate-50 border-y" aria-labelledby="projects-heading">
-          <div class="mx-auto max-w-6xl px-4 py-14">
+        <section id="projects" class="bg-slate-50 border-y py-10 md:py-12 lg:py-16" aria-labelledby="projects-heading">
+          <div class="mx-auto max-w-6xl px-4">
             <h2 id="projects-heading" class="text-2xl font-semibold text-slate-900">Featured Projects</h2>
             <p class="mt-2 text-slate-600 max-w-3xl">Key Product Management projects showcasing expertise in healthcare, data platforms, and modern development practices.</p>
             <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               <!-- Healthcare Data Pipeline -->
-              <article class="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-lg transition-shadow duration-300 focus-within:ring-2 focus-within:ring-brand-500 focus-within:ring-offset-2">
+              <article class="group bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 focus-within:ring-2 focus-within:ring-brand-500 focus-within:ring-offset-2 will-change-transform">
                 <header class="mb-4">
                   <h3 class="text-xl font-semibold text-slate-900 mb-2">
                     Healthcare Data Pipeline
@@ -356,13 +391,13 @@
                 </ul>
 
                 <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-brand-50 text-brand-700 border border-brand-200">
+                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-50 text-slate-600 border border-slate-200">
                     Azure Synapse
                   </span>
-                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-50 text-slate-700 border border-slate-200">
+                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-50 text-slate-600 border border-slate-200">
                     Data Factory
                   </span>
-                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-50 text-slate-700 border border-slate-200">
+                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-50 text-slate-600 border border-slate-200">
                     Power BI
                   </span>
                 </div>
@@ -380,17 +415,17 @@
                   <a
                     href="https://github.com/alyrlee/healthcare-data-pipeline"
                     class="text-sm font-medium text-brand-700 hover:text-brand-600 underline decoration-brand-300 hover:decoration-brand-600 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 rounded"
-                    aria-label="View Healthcare Data Pipeline on GitHub"
+                    aria-label="View on GitHub: Healthcare Data Pipeline"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    GitHub
+                    View on GitHub
                   </a>
                 </footer>
               </article>
 
               <!-- AI Engineer Challenge -->
-              <article class="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-lg transition-shadow duration-300 focus-within:ring-2 focus-within:ring-brand-500 focus-within:ring-offset-2">
+              <article class="group bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 focus-within:ring-2 focus-within:ring-brand-500 focus-within:ring-offset-2 will-change-transform">
                 <header class="mb-4">
                   <h3 class="text-xl font-semibold text-slate-900 mb-2">
                     The AI Engineer Challenge
@@ -416,7 +451,7 @@
                 </ul>
 
                 <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-brand-50 text-brand-700 border border-brand-200">
+                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-50 text-slate-600 border border-slate-200">
                     OpenAI API
                   </span>
                   <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-50 text-slate-700 border border-slate-200">
@@ -440,17 +475,17 @@
                   <a
                     href="https://github.com/alyrlee/The-AI-Engineer-Challenge"
                     class="text-sm font-medium text-brand-700 hover:text-brand-600 underline decoration-brand-300 hover:decoration-brand-600 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 rounded"
-                    aria-label="View AI Engineer Challenge on GitHub"
+                    aria-label="View on GitHub: AI Engineer Challenge"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    GitHub
+                    View on GitHub
                   </a>
                 </footer>
               </article>
 
               <!-- Data Science Tools -->
-              <article class="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-lg transition-shadow duration-300 focus-within:ring-2 focus-within:ring-brand-500 focus-within:ring-offset-2">
+              <article class="group bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 focus-within:ring-2 focus-within:ring-brand-500 focus-within:ring-offset-2 will-change-transform">
                 <header class="mb-4">
                   <h3 class="text-xl font-semibold text-slate-900 mb-2">
                     Data Science Tools and Ecosystem
@@ -476,7 +511,7 @@
                 </ul>
 
                 <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-brand-50 text-brand-700 border border-brand-200">
+                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-50 text-slate-600 border border-slate-200">
                     Python
                   </span>
                   <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-50 text-slate-700 border border-slate-200">
@@ -500,17 +535,17 @@
                   <a
                     href="https://github.com/alyrlee/Data-Science-Tools-and-Ecosystem"
                     class="text-sm font-medium text-brand-700 hover:text-brand-600 underline decoration-brand-300 hover:decoration-brand-600 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 rounded"
-                    aria-label="View Data Science Tools on GitHub"
+                    aria-label="View on GitHub: Data Science Tools"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    GitHub
+                    View on GitHub
                   </a>
                 </footer>
               </article>
 
               <!-- Bellabeat Analysis -->
-              <article class="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-lg transition-shadow duration-300 focus-within:ring-2 focus-within:ring-brand-500 focus-within:ring-offset-2">
+              <article class="group bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 focus-within:ring-2 focus-within:ring-brand-500 focus-within:ring-offset-2 will-change-transform">
                 <header class="mb-4">
                   <h3 class="text-xl font-semibold text-slate-900 mb-2">
                     Bellabeat Product Analysis
@@ -536,7 +571,7 @@
                 </ul>
 
                 <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-brand-50 text-brand-700 border border-brand-200">
+                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-50 text-slate-600 border border-slate-200">
                     R
                   </span>
                   <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-50 text-slate-700 border border-slate-200">
@@ -560,17 +595,17 @@
                   <a
                     href="https://github.com/alyrlee/bellabeat-product-analysis"
                     class="text-sm font-medium text-brand-700 hover:text-brand-600 underline decoration-brand-300 hover:decoration-brand-600 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 rounded"
-                    aria-label="View Bellabeat Analysis on GitHub"
+                    aria-label="View on GitHub: Bellabeat Analysis"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    GitHub
+                    View on GitHub
                   </a>
                 </footer>
               </article>
 
               <!-- Snap Client -->
-              <article class="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-lg transition-shadow duration-300 focus-within:ring-2 focus-within:ring-brand-500 focus-within:ring-offset-2">
+              <article class="group bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 focus-within:ring-2 focus-within:ring-brand-500 focus-within:ring-offset-2 will-change-transform">
                 <header class="mb-4">
                   <h3 class="text-xl font-semibold text-slate-900 mb-2">
                     Snap Client Application
@@ -596,7 +631,7 @@
                 </ul>
 
                 <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-brand-50 text-brand-700 border border-brand-200">
+                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-50 text-slate-600 border border-slate-200">
                     React
                   </span>
                   <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-50 text-slate-700 border border-slate-200">
@@ -620,17 +655,17 @@
                   <a
                     href="https://github.com/alyrlee/snap-client"
                     class="text-sm font-medium text-brand-700 hover:text-brand-600 underline decoration-brand-300 hover:decoration-brand-600 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 rounded"
-                    aria-label="View Snap Client on GitHub"
+                    aria-label="View on GitHub: Snap Client"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    GitHub
+                    View on GitHub
                   </a>
                 </footer>
               </article>
 
               <!-- Snap Locator API -->
-              <article class="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-lg transition-shadow duration-300 focus-within:ring-2 focus-within:ring-brand-500 focus-within:ring-offset-2">
+              <article class="group bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 focus-within:ring-2 focus-within:ring-brand-500 focus-within:ring-offset-2 will-change-transform">
                 <header class="mb-4">
                   <h3 class="text-xl font-semibold text-slate-900 mb-2">
                     Snap Locator API
@@ -656,7 +691,7 @@
                 </ul>
 
                 <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-brand-50 text-brand-700 border border-brand-200">
+                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-50 text-slate-600 border border-slate-200">
                     Node.js
                   </span>
                   <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-50 text-slate-700 border border-slate-200">
@@ -680,11 +715,11 @@
                   <a
                     href="https://github.com/alyrlee/snap_locator_api"
                     class="text-sm font-medium text-brand-700 hover:text-brand-600 underline decoration-brand-300 hover:decoration-brand-600 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 rounded"
-                    aria-label="View Snap Locator API on GitHub"
+                    aria-label="View on GitHub: Snap Locator API"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    GitHub
+                    View on GitHub
                   </a>
                 </footer>
               </article>
@@ -692,18 +727,34 @@
           </div>
         </section>
 
-    <!-- About Section -->
-    <section id="about" class="mx-auto max-w-6xl px-4 py-16" aria-labelledby="about-heading">
-      <h2 id="about-heading" class="text-2xl font-semibold text-slate-900">About</h2>
-      <p class="mt-4 text-slate-700 max-w-3xl">
-        Healthcare PM with experience across platform modernization, data pipelines, and operations workflows.
-        Certified CSPO/CSM & SAFe PO/PM. Comfort with Snowflake, Databricks, Azure DevOps, LaunchDarkly.
-      </p>
-    </section>
+        <!-- About Section -->
+        <section id="about" class="py-10 md:py-12 lg:py-16" aria-labelledby="about-heading">
+          <div class="mx-auto max-w-6xl px-4">
+            <h2 id="about-heading" class="text-2xl font-semibold text-slate-900">About</h2>
+            <p class="mt-4 text-slate-700 max-w-prose leading-relaxed">
+              Healthcare PM with experience across platform modernization, data pipelines, and operations workflows.
+              Certified CSPO/CSM & SAFe PO/PM. Comfort with Snowflake, Databricks, Azure DevOps, LaunchDarkly.
+            </p>
+            <div class="mt-8">
+              <a
+                href="/assets/img/Ashley_Lee-Vigneau_Resume-Sept.pdf"
+                class="inline-flex items-center min-h-[44px] px-6 py-3 bg-brand-700 text-white font-medium rounded-xl hover:bg-brand-800 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 transition-all duration-200 shadow-sm hover:shadow-md"
+                aria-label="Download Ashley's resume (PDF)"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                Download Resume
+              </a>
+            </div>
+          </div>
+        </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-slate-50 border-t" aria-labelledby="contact-heading">
-      <div class="mx-auto max-w-6xl px-4 py-14">
+    <section id="contact" class="bg-slate-50 border-t py-10 md:py-12 lg:py-16" aria-labelledby="contact-heading">
+      <div class="mx-auto max-w-6xl px-4">
         <h2 id="contact-heading" class="text-2xl font-semibold text-slate-900">Contact</h2>
         <div class="mt-4 flex flex-wrap gap-4">
           <a 
@@ -737,8 +788,36 @@
   </main>
 
   <!-- Footer -->
-  <footer class="mx-auto max-w-6xl px-4 py-8 text-sm text-slate-500" role="contentinfo">
-    <p>© 2025 - Ashley Lee-Vigneau. All rights reserved.</p>
+  <footer class="bg-slate-900 text-slate-300" role="contentinfo">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="text-center md:text-left">
+          <p class="text-sm text-slate-400">© 2025 - Ashley Lee-Vigneau. All rights reserved.</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 items-center">
+          <a
+            href="#main-content"
+            class="inline-flex items-center min-h-[44px] px-4 py-2 text-sm font-medium text-slate-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 focus:ring-offset-slate-900 transition-colors"
+            aria-label="Back to top of page"
+          >
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+            </svg>
+            Back to top
+          </a>
+          <a
+            href="mailto:ashleyloreal.lee@gmail.com"
+            class="inline-flex items-center min-h-[44px] px-6 py-3 bg-brand-700 text-white font-medium rounded-lg hover:bg-brand-800 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 focus:ring-offset-slate-900 transition-all duration-200 shadow-sm hover:shadow-md"
+            aria-label="Send email to ashleyloreal.lee@gmail.com"
+          >
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            Email me
+          </a>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <script src="/js/main.js" defer></script>
