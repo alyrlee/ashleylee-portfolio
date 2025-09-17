@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSkipNavigation();
     initFocusManagement();
     initPrintStyles();
+    initActiveSectionIndicator();
 });
 
 // Mobile Menu Toggle
@@ -232,3 +233,37 @@ const debouncedResize = debounce(() => {
 }, 250);
 
 window.addEventListener('resize', debouncedResize);
+
+// Active Section Indicator
+function initActiveSectionIndicator() {
+    const sections = [...document.querySelectorAll('section[id]')];
+    const navLinks = [...document.querySelectorAll('header nav a[href^="#"]')];
+    
+    if (sections.length === 0 || navLinks.length === 0) return;
+    
+    const map = new Map(navLinks.map(a => [a.getAttribute('href').slice(1), a]));
+    
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Remove active classes from all nav links
+                navLinks.forEach(a => {
+                    a.classList.remove('text-brand-700', 'font-semibold');
+                    a.classList.add('text-slate-700');
+                });
+                
+                // Add active class to current section's nav link
+                const link = map.get(entry.target.id);
+                if (link) {
+                    link.classList.remove('text-slate-700');
+                    link.classList.add('text-brand-700', 'font-semibold');
+                }
+            }
+        });
+    }, { 
+        rootMargin: "-40% 0px -55% 0px", 
+        threshold: 0.01 
+    });
+    
+    sections.forEach(section => io.observe(section));
+}
