@@ -6,9 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>About</title>
-    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { brand: { 50:'#f5f8ff', 500:'#3c5cff', 700:'#2238cc' } }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
     <link href="//fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/main.js" defer></script>
 </head>
 
 <body>
@@ -17,7 +28,7 @@
             <li><a href="home.html">Home</a></li>
             <li><a class="active" href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="index.html">Portfolio</a></li>
         </ul>
     </nav>
 
@@ -36,21 +47,21 @@
                 <br></br>
         <h2>Skills</h2>
             <div class="social">
-             <div class="social-links"><img src="./social_images/react.png" /></div>
+             <div class="social-links"><img src="assets/icons/react.png" /></div>
                 React
-                <div class="social-links"><img src="./social_images/nodejs.png" /></div>
+                <div class="social-links"><img src="assets/icons/nodejs.png" /></div>
                 Node
-                <div class="social-links"><img src="./social_images/javascript.png" /></div>
+                <div class="social-links"><img src="assets/icons/javascript.png" /></div>
                 JavaScript
-                <div class="social-links"><img src="./social_images/css.png" /></div>
+                <div class="social-links"><img src="assets/icons/css.png" /></div>
                 CSS
-                <div class="social-links"><img src="./social_images/html.png" /></div>
+                <div class="social-links"><img src="assets/icons/html.png" /></div>
                 HTML
-                <div class="social-links"><img src="./social_images/git.png" /></div>
+                <div class="social-links"><img src="assets/icons/git.png" /></div>
                 Git
-                <div class="social-links"><img src="./social_images/postgresql.png" /></div>
+                <div class="social-links"><img src="assets/icons/postgresql.png" /></div>
                 PostgreSQL
-                <div class="social-links"><img src="./social_images/postman.png" /></div>
+                <div class="social-links"><img src="assets/icons/postman.png" /></div>
                 Postman
         </div>
 
