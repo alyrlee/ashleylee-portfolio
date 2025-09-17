@@ -1,0 +1,362 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Styles */
+* {
+    text-decoration: none;
+    list-style: none;
+    align-items: center;
+}
+
+body {
+    background-color: whitesmoke;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 2px 16px;
+}
+
+.nav {
+    display: flex;
+    flex: 0 0 25%;
+    background-color: #80351E;
+    width: 100%;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #80351E;
+}
+
+li {
+    float: left;
+    width: 24%;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+li a:active {
+    background-color: #063B67;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+p {
+    font-size: 1.2em;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    text-align: left;
+    max-width: 800px;
+    display: inline-block;
+    float: left;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    filter: grayscale(1);
+    text-shadow: #111 0px 0px 10px;
+}
+
+a {
+    color: #01213b;
+    font-family: 'Lato', serif;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+a.button {
+    background-color: #285828;
+    border: none;
+    color: white;
+    padding: 20px 34px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 40%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+img.resize {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.card-block {
+    padding: 2em;
+}
+
+.card-title {
+    margin: 0;
+    color: #01213b;
+    font-size: 1.6em;
+    font-family: 'Quattrocento', serif;
+}
+
+.card-footer {
+    display: flex;
+    text-align: center;
+}
+
+.card-actions {
+    margin-right: 1em;
+}
+
+img {
+    width: 100%;
+    max-width: 800px;
+    padding-bottom: 10px;
+    justify-content: center;
+    float: right;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+}
+
+.social li {
+    align-self: center;
+    margin: 20px 20px 20px 0;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+footer {
+    grid-column: span 3;
+    padding: 30px;
+    text-align: center;
+    font-size: 1.4em;
+    color: black;
+}
+
+.social-links {
+    background: #1a1a1a;
+    color: #e6e6e6;
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    border-radius: 1rem;
+    margin: 1rem 0.5rem;
+    height: 5rem;
+    width: 10rem;
+    margin-bottom: 1rem;
+}
+
+.social img {
+    height: 5rem;
+    width: 5rem;
+    margin-bottom: 3rem;
+}
+
+.education {
+    background: #80351E;
+    color: #e6e6e6;
+    padding: 4rem 0;
+}
+
+/* Home page specific styles */
+body.home {
+    background: url("assets/img/homecolor.jpg");
+    background-size: cover;
+    background-color: #80351E;
+}
+
+body.home h1 {
+    font-size: 70px;
+    margin-top: 20%;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    filter: grayscale(1);
+    text-shadow: #111 0px 0px 10px;
+}
+
+body.home footer {
+    color: white;
+    filter: grayscale(1);
+    text-shadow: #111 0px 0px 10px;
+}
+
+/* Tailwind Components */
+.badge {
+    @apply inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-xs font-medium;
+}
+
+.badge-soft {
+    @apply bg-slate-50 border-slate-200 text-slate-700 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-200;
+}
+
+.badge-brand {
+    @apply bg-brand-50 border-brand-500/20 text-brand-700 dark:bg-brand-500/10 dark:text-brand-50;
+}
+
+.btn {
+    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 border border-slate-300 dark:border-slate-700;
+}
+
+.btn-primary {
+    @apply bg-brand-700 text-white border-transparent hover:opacity-90;
+}
+
+.link {
+    @apply underline decoration-slate-400 hover:decoration-brand-700;
+}
+
+.prose ul { 
+    list-style: disc; 
+    padding-left: 1.25rem; 
+}
+
+/* Accessibility Improvements */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+/* Focus improvements */
+*:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .text-slate-600 {
+        color: #000000 !important;
+    }
+    .text-slate-700 {
+        color: #000000 !important;
+    }
+    .border-slate-200 {
+        border-color: #000000 !important;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .sr-only {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+    }
+    
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    
+    .no-print {
+        display: none !important;
+    }
+}
+
+/* Responsive Design */
+@media all and (max-width: 800px) {
+    h1 {
+        font-size: 8vw;
+    }
+    h2,
+    h3 {
+        font-size: 6vw;
+    }
+    p {
+        font-size: 4vw;
+    }
+    
+    body.home h1 {
+        font-size: 10vw;
+    }
+    body.home h2,
+    body.home h3 {
+        font-size: 8vw;
+    }
+    body.home p {
+        font-size: 6vw;
+    }
+}
