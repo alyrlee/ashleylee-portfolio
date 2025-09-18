@@ -258,6 +258,20 @@ function initActiveSectionIndicator() {
                     link.classList.remove('text-slate-700');
                     link.classList.add('text-brand-700', 'font-semibold');
                 }
+                
+                // Special handling for About section - highlight both About and Contact links
+                if (entry.target.id === 'about') {
+                    const aboutLink = map.get('about');
+                    const contactLink = document.querySelector('a[aria-label="Contact Ashley"]');
+                    if (aboutLink) {
+                        aboutLink.classList.remove('text-slate-700');
+                        aboutLink.classList.add('text-brand-700', 'font-semibold');
+                    }
+                    if (contactLink) {
+                        contactLink.classList.remove('text-slate-700');
+                        contactLink.classList.add('text-brand-700', 'font-semibold');
+                    }
+                }
             }
         });
     }, { 
