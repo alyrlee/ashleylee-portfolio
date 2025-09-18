@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Image Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .image-container { 
+            width: 200px; 
+            height: 200px; 
+            border: 2px solid red; 
+            margin: 20px 0;
+            background: #f0f0f0;
+        }
+        img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Image Test</h1>
+    <p>Testing headshot image:</p>
+    <div class="image-container">
+        <img src="assets/img/headshot-small.png" alt="Headshot test" />
+    </div>
+    
+    <p>Testing hero background image:</p>
+    <div class="image-container">
+        <img src="assets/img/hero-bg.jpg" alt="Hero background test" />
+    </div>
+    
+    <p>If you can see both images above, the paths are working correctly.</p>
+</body>
+</html>
